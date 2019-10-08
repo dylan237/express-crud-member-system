@@ -17,7 +17,7 @@ const student = require('./students')
 
 // 2. 將路由掛載到 router 容器中
 
-// 首頁渲染所有學生列表
+// 渲染所有學生列表
 router.get('/students', (req, res) => {
   student.find(function (err, students) {
     if (err) {
@@ -53,7 +53,7 @@ router.post('/students/new', (req, res) => {
   })
 })
 
-// 取得被編輯學生的頁面
+// 渲染被編輯學生的頁面
 router.get('/students/edit', (req, res) => {
   student.findById(req.query.id, function (err, student) {
     if (err) {
